@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blocks/element/__description/element__description.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/element/__images/element__images.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/element/__like/element__like.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/element/__name/element__name.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/element/element.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/elements.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/footer/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/form/__button/form__button-close.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/form/__button/form__button-save.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/form/__input/form__input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/form/__title/form__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/form/_active/form_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/form/form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/form/form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/header/__line/header__line.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/header/__logo/header__logo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/header/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/logo/logo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/popup/popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__add-button/_image/profile__add-button_image.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__profile-info/profile__info.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__subtitle/profile__subtitle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__title/profile__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610872112050</updated>
       <workItem from="1610872114154" duration="34453000" />
-      <workItem from="1610998386763" duration="20604000" />
+      <workItem from="1610998386763" duration="21204000" />
     </task>
     <servers />
   </component>
