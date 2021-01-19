@@ -1,0 +1,19 @@
+.header__logo{
+    margin-bottom: 41px;
+}
+
+@media all and (max-width: 880px){
+    .header__logo{
+        margin-left: 41px;
+        transition: .5s;
+    }
+}
+
+
+@media all and (max-width: 320px){
+    .header__logo{
+        margin-left: 27px;
+        margin-bottom: 32px;
+        transition: .5s;
+    }
+}

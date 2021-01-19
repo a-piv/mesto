@@ -1,0 +1,23 @@
+.profile__info{
+    width: 336px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+@media all and (max-width: 665px){
+    .profile__info{
+     justify-content: center;
+    }
+}
+
+@media all and (max-width: 400px){
+    .profile__info{
+
+        width: 189px;
+        margin-bottom: 36px;
+    }
+}
