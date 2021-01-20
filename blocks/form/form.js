@@ -16,8 +16,8 @@ function openForm (){
 }
 
 
-function safeForm(){
-    event.preventDefault();
+function safeForm(evt){
+    evt.preventDefault();
     profileName.textContent = document.querySelector('#form-firstname').value;
     profileSubtitle.textContent = document.querySelector('#form-secondname').value;
     console.log(profileName.textContent)
