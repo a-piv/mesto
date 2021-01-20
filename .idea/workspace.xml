@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__add-button/_image/profile__add-button_image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button-image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\profile\__add-button" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form\__button" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks" />
     </key>
@@ -58,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610872112050</updated>
       <workItem from="1610872114154" duration="34453000" />
-      <workItem from="1610998386763" duration="26223000" />
+      <workItem from="1610998386763" duration="28996000" />
     </task>
     <servers />
   </component>
