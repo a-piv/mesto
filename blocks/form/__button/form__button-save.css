@@ -1,5 +1,4 @@
 .form__button-save{
-    margin: 48px auto 0;
     width: 100%;
     height: 50px;
     box-sizing: border-box;
@@ -10,11 +9,17 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    transition: .5s;
 }
 
 .form__button-save:hover {
     opacity: 0.8;
     cursor: pointer;
+    transition: .5s;
+}
+
+.form__button-save:focus {
+    outline: none;
 }
 
 @media all and (max-width: 665px){

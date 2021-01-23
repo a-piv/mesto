@@ -12,10 +12,10 @@
 
 @media all and (max-width: 400px) {
     .profile__title{
-        font-weight: 500;
         font-size: 27px;
         line-height: 33px;
         text-align: center;
+        padding-bottom: 5px;
         transition: .5s;
     }
 }

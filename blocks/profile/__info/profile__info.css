@@ -1,8 +1,8 @@
 .profile__info{
     width: 336px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
@@ -16,7 +16,6 @@
 
 @media all and (max-width: 400px){
     .profile__info{
-
         width: 189px;
         margin-bottom: 36px;
     }
