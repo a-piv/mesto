@@ -1,4 +1,5 @@
 .profile__subtitle{
+    width: calc(100% - (24px + 18px));
     margin: 0;
     font-weight: normal;
     font-size: 18px;
@@ -10,6 +11,7 @@
 
 @media all and (max-width: 400px) {
     .profile__subtitle{
+        width:100%;
         font-size: 14px;
         line-height: 17px;
         text-align: center;

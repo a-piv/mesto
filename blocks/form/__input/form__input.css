@@ -11,16 +11,13 @@
     line-height: 17px;
     color: #000000;
 }
+.form__input:last-of-type{
+    margin-bottom: 48px;
+}
 
 .form__input:focus{
     outline: 0;
 }
-
-#form-secondname{
-    margin-bottom: 48px;
-}
-
-
 
 
 @media all and (max-width: 450px){
@@ -28,7 +25,7 @@
         padding-bottom: 8px;
         transition: .5s;
     }
-    #form-secondname{
+    .form__input:last-of-type{
         margin-bottom: 41px;
         transition: .5s;
     }

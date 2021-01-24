@@ -6,9 +6,6 @@
     background-repeat: no-repeat;
     background-color: transparent;
     background-position: center;
-    position: absolute;
-    right: 0;
-    top: 10px;
 }
 .profile__edit-button:focus{
     outline: none;
@@ -25,7 +22,8 @@
     .profile__edit-button{
         position: absolute;
         width: 18px;
-        top: 8px;
+        height: 18px;
+        top: 10px;
         right: calc(-10px - 18px);
         background-size: 18px;
     }

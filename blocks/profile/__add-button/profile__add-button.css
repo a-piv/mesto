@@ -23,9 +23,17 @@
     outline: none;
 }
 
-@media all and (max-width: 665px) {
+
+@media all and (max-width: 670px) {
     .profile__add-button{
-        width: 282px;
+        margin: 0 auto;
+        transition: .5s;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .profile__add-button{
+        width: calc(100% - 10px*2);
         margin: 0 auto;
         transition: .5s;
         background-size: 16px;
