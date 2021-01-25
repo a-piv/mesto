@@ -3,21 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/form/__button/form__button-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button/__button-close/form__button-close.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/form/__button/form__button-save.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button/__button-save/form__button-save.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/form/__input/form__input.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__input/form__input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/form/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__info/profile__info.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__info/profile__info.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__subtitle/profile__subtitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__subtitle/profile__subtitle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/profile/__title/profile__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__title/profile__title.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/Inter-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/Inter-Bold.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/inter.css" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/inter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/form/__button/__button-close/form__button-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button-close/form__button-close.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/form/__button/__button-save/form__button-save.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button-save/form__button-save.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/blocks/form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +49,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form\__button\__button-close" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form\__button\__button-save" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\scripts" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\profile\__add-button" />
-      <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form\__button" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -75,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610872112050</updated>
       <workItem from="1610872114154" duration="34453000" />
-      <workItem from="1610998386763" duration="71903000" />
+      <workItem from="1610998386763" duration="75262000" />
     </task>
     <servers />
   </component>

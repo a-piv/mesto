@@ -7,8 +7,8 @@ let formEditProfile = body.querySelector('.form');
 
 
 let closeFormButton = formEditProfile.querySelector('.form__button-close');
-let firstNameInput = formEditProfile.elements[1];
-let secondNameInput = formEditProfile.elements[2];
+let firstNameInput = formEditProfile.querySelector('#form-firstname');
+let secondNameInput = formEditProfile.querySelector('#form-secondname');
 
 function openForm (){
     firstNameInput.value = profileName.textContent;
