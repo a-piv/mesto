@@ -1,0 +1,6 @@
+.popup-image__scrin{
+    max-width: 75vw;
+    max-height: 75vw;
+    position: relative;
+    transition: visibility 1s, opacity 1s linear;
+}

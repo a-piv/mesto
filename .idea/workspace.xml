@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/blocks/element/__delete/element__delete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/element/__like/_active/element__like_active.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup-image/__button-close/popup-image__button-close.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup-image/__popup-image-wrapper/popup-image-wrapper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup-image/__signature/popup-image__signature.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup-image/__skrin/popup-image__scrin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup-image/popup-image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/form/__button/__button-close/form__button-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button-close/form__button-close.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/form/__button/__button-save/form__button-save.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button-save/form__button-save.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__images/element__images.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__images/element__images.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__like/element__like.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__like/element__like.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/element.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/element.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/form/__button-close/form__button-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button-close/form__button-close.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/form/_active/form_active.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/_active/form_active.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup-form/popup-form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/form.js" afterDir="false" />
@@ -36,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../russian-travel/index.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -65,7 +78,9 @@
       <option name="presentableId" value="Default" />
       <updated>1610872112050</updated>
       <workItem from="1610872114154" duration="34453000" />
-      <workItem from="1610998386763" duration="75262000" />
+      <workItem from="1610998386763" duration="76476000" />
+      <workItem from="1612295802670" duration="7176000" />
+      <workItem from="1612723799873" duration="49871000" />
     </task>
     <servers />
   </component>

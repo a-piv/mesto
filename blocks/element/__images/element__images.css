@@ -2,3 +2,12 @@
     height: 282px;
     object-fit: cover;
 }
+
+.element__images::after{
+    content: '';
+    background-image: url("../../../images/trash.svg");
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
