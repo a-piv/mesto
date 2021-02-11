@@ -17,6 +17,7 @@ function openFormEditProfile(){
     popupForm.querySelector('.form__button-save').classList.add('form__button-save_profile');
     document.querySelector('.form_profile').addEventListener('submit', saveNewProfile);
     document.querySelector('.form__button-close').addEventListener('click', closeForm);
+
     popupForm.classList.add('form_active');
 }
 
@@ -32,6 +33,7 @@ function openFormNewCard(){
     popupForm.querySelector('#form-secondname').placeholder = 'Ссылка на картинку';
     document.querySelector('.form_card').addEventListener('submit', saveNewCard);
     document.querySelector('.form__button-close').addEventListener('click', closeForm);
+
     popupForm.classList.add('form_active');
 }
 
@@ -88,6 +90,13 @@ function closeForm (){
         form.querySelector('#form-secondname').classList.remove('form__input-newCard-link');
     }
 
+    document.querySelector('.form__button-close').removeEventListener('click', closeForm);
+
+    document.querySelector('.form').removeEventListener('submit', saveNewProfile);
+    document.querySelector('.form').removeEventListener('submit', saveNewCard);
+
+
+
     console.log('Закрыть попап');
     body.querySelector('.popup-form').classList.remove('form_active');
 }
@@ -95,8 +104,8 @@ function closeForm (){
 //Сохранить профиль
 function saveNewProfile(evt){
     evt.preventDefault();
-    profileName.textContent = document.querySelector('.form__input-editProfile-name').value;
-    profileSubtitle.textContent = document.querySelector('.form__input-editProfile-link').value;
+    profileName.textContent = document.querySelector('#form-firstname').value;
+    profileSubtitle.textContent = document.querySelector('#form-secondname').value;
     closeForm ();
 }
 
