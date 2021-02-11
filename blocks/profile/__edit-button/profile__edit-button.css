@@ -7,6 +7,7 @@
     background-color: transparent;
     background-position: center;
     transition: .5s;
+
 }
 .profile__edit-button:focus{
     outline: none;

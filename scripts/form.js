@@ -6,37 +6,33 @@ let elements = body.querySelector('.elements')
 
 // Открыть попап для профиля
 function openFormEditProfile(){
-    console.log('Редактировать профиль');
-    const templatePopupForm = document.querySelector('#popup__new-card').content;
-    templatePopupForm.querySelector('.popup-form').classList.add('form_active')
-    templatePopupForm.querySelector('.form__title').textContent = 'Редактировать профиль';
-    templatePopupForm.querySelector('#form-firstname').classList.add('form__input-editProfile-name');
-    templatePopupForm.querySelector('.form__input-editProfile-name').value = profileName.textContent;
-    templatePopupForm.querySelector('#form-secondname').classList.add('form__input-editProfile-link');
-    templatePopupForm.querySelector('.form__input-editProfile-link').value = profileSubtitle.textContent;
-    templatePopupForm.querySelector('.form__button-save').classList.add('form__button-save_profile');
-    const templatePopupFormNode = templatePopupForm.cloneNode(true);
-    document.querySelector('.content').append(templatePopupFormNode);
-    document.querySelector('.form').addEventListener('submit', saveNewProfile);
+    console.log(profileSubtitle.textContent);
+    const popupForm = document.querySelector('.popup-form');
+    popupForm.querySelector('form').classList.add('form_profile');
+    popupForm.querySelector('.form__title').textContent = 'Редактировать профиль';
+    popupForm.querySelector('#form-firstname').classList.add('form__input-editProfile-name');
+    popupForm.querySelector('.form__input-editProfile-name').value = profileName.textContent;
+    popupForm.querySelector('#form-secondname').classList.add('form__input-editProfile-link');
+    popupForm.querySelector('.form__input-editProfile-link').value = profileSubtitle.textContent;
+    popupForm.querySelector('.form__button-save').classList.add('form__button-save_profile');
+    document.querySelector('.form_profile').addEventListener('submit', saveNewProfile);
     document.querySelector('.form__button-close').addEventListener('click', closeForm);
-    templatePopupForm.querySelector('.form__input-editProfile-name').value = '';
-    templatePopupForm.querySelector('.form__input-editProfile-link').value ='';
+    popupForm.classList.add('form_active');
 }
 
 // Открыть попап для новой карточки
 function openFormNewCard(){
     console.log('Добавить новую карточку')
-    const templatePopupForm = document.querySelector('#popup__new-card').content;
-    templatePopupForm.querySelector('.popup-form').classList.add('form_active')
-    templatePopupForm.querySelector('.form__title').textContent = 'Новая тачка';
-    templatePopupForm.querySelector('#form-firstname').classList.add('form__input-newCard-name');
-    templatePopupForm.querySelector('#form-firstname').placeholder = 'Название';
-    templatePopupForm.querySelector('#form-secondname').classList.add('form__input-newCard-link');
-    templatePopupForm.querySelector('#form-secondname').placeholder = 'Ссылка на картинку';
-    const templatePopupFormNode = templatePopupForm.cloneNode(true);
-    document.querySelector('.content').append(templatePopupFormNode);
-    document.querySelector('.form').addEventListener('submit', saveNewCard);
+    const popupForm = document.querySelector('.popup-form');
+    popupForm.querySelector('form').classList.add('form_card');
+    popupForm.querySelector('.form__title').textContent = 'Новая тачка';
+    popupForm.querySelector('#form-firstname').classList.add('form__input-newCard-name');
+    popupForm.querySelector('#form-firstname').placeholder = 'Название';
+    popupForm.querySelector('#form-secondname').classList.add('form__input-newCard-link');
+    popupForm.querySelector('#form-secondname').placeholder = 'Ссылка на картинку';
+    document.querySelector('.form_card').addEventListener('submit', saveNewCard);
     document.querySelector('.form__button-close').addEventListener('click', closeForm);
+    popupForm.classList.add('form_active');
 }
 
 //Создать карточку.
@@ -70,11 +66,30 @@ function createCard(cardName, cardLink){
     return articleElement;
 }
 
-//Закрыть попап
+//Закрыть попап с редактированием
 function closeForm (){
+    const form = document.querySelector('.form');
+    form.querySelector('#form-firstname').value = '';
+    form.querySelector('#form-secondname').value ='';
+
+    if (form.classList.contains('form_profile')){form.classList.remove('form_profile')}
+    if (form.querySelector('.form__input-editProfile-name')){
+        form.querySelector('#form-firstname').classList.remove('form__input-editProfile-name');
+    }
+    if (form.querySelector('.form__input-editProfile-link')){
+        form.querySelector('#form-secondname').classList.remove('form__input-editProfile-link');
+    }
+
+    if (form.classList.contains('form_card')){form.classList.remove('form_card')}
+    if (form.querySelector('.form__input-newCard-name')){
+        form.querySelector('#form-firstname').classList.remove('form__input-newCard-name');
+    }
+    if (form.querySelector('.form__input-newCard-link')){
+        form.querySelector('#form-secondname').classList.remove('form__input-newCard-link');
+    }
+
     console.log('Закрыть попап');
     body.querySelector('.popup-form').classList.remove('form_active');
-    document.querySelector('.popup-form').remove();
 }
 
 //Сохранить профиль
@@ -107,10 +122,6 @@ auto.forEach(item=> {
     }
 )
 
-
-// formEditProfile.addEventListener('submit', saveNewProfile);
-// document.querySelector('.form__button-close').addEventListener('click', closeForm);
-
 // Форма - Редактировать профиль
 editForm.addEventListener('click', openFormEditProfile);
 
@@ -131,11 +142,8 @@ elements.addEventListener('click', (evt)=>{
 elements.addEventListener('click', (evt)=>{
     if (evt.target.className === 'element__images') {
         console.log('Открыть во весь экран')
-        console.log(evt.preventDefault());
-        // evt.target.parentElement.remove();
-        const templateFullImage = body.querySelector('#popup__full-scrin-image').content;
-        const formFullImage = templateFullImage.cloneNode(true);
-        document.querySelector('.content').append(formFullImage);
+        console.log(evt.target.className)
+        document.querySelector('.popup-image').classList.add('popup-image-active');
         document.querySelector('.popup-image__scrin').setAttribute("src", evt.target.currentSrc)
         document.querySelector('.popup-image__signature').textContent=evt.target.alt;
         document.querySelector('.popup-image__button-close').addEventListener('click', deleteFullImage)
@@ -144,8 +152,5 @@ elements.addEventListener('click', (evt)=>{
 
 
 function deleteFullImage (evt){
-    document.querySelector('.popup-image').remove();
+    document.querySelector('.popup-image').classList.toggle('popup-image-active')
 }
-// function like (evt){
-//     evt.target.classList.toggle('element__like_active');
-// }

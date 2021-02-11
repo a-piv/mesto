@@ -1,6 +1,6 @@
 .form_active{
-    display: block;
-    /*visibility: hidden;*/
-    /*opacity: 0;*/
-    transition: visibility 0s, opacity 0.5s linear;
+    visibility: visible;
+    opacity: 1;
+    transition: all 1s linear;
 }
+

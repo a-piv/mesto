@@ -5,7 +5,14 @@
     position: fixed;
     top:0;
     left: 0;
-    transition: 1s;
     margin-bottom: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
 
+.popup-image-active{
+    visibility: visible;
+    opacity: 1;
+    transition: all 1s linear;
 }
