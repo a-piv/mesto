@@ -148,18 +148,27 @@ elements.addEventListener('click', (evt)=>{
 })
 
 // Открыть карточку во весь экран
-elements.addEventListener('click', (evt)=>{
-    if (evt.target.className === 'element__images') {
+let allCard = document.querySelectorAll('.element__images');
+allCard.forEach(elem=>elem.addEventListener('click',fullSkreenImage))
+
+function fullSkreenImage(evt) {
+    console.log(evt.target)
+    // if (evt.target.className === 'element__images') {
         console.log('Открыть во весь экран')
-        console.log(evt.target.className)
+    //     console.log(evt.target.className)
+        document.querySelector('.popup-image').classList.remove('popup-image_z');
         document.querySelector('.popup-image').classList.add('popup-image-active');
         document.querySelector('.popup-image__scrin').setAttribute("src", evt.target.currentSrc)
-        document.querySelector('.popup-image__signature').textContent=evt.target.alt;
+        document.querySelector('.popup-image__signature').textContent = evt.target.alt;
         document.querySelector('.popup-image__button-close').addEventListener('click', deleteFullImage)
-    }
-})
+    // }
+}
 
 
 function deleteFullImage (evt){
-    document.querySelector('.popup-image').classList.toggle('popup-image-active')
+    document.querySelector('.popup-image').classList.toggle('popup-image-active');
+    // document.querySelector('.popup-image__scrin').setAttribute("src", '')
+    setTimeout(()=>{document.querySelector('.popup-image').classList.add('popup-image_z')},500)
+
+
 }

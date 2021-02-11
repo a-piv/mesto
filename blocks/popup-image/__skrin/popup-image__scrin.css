@@ -1,6 +1,7 @@
 .popup-image__scrin{
+    display: flex;
     max-width: 75vw;
-    max-height: 75vw;
+    max-height: 75vh;
     position: relative;
-    transition: visibility 1s, opacity 1s linear;
+    transition: visibility .5s, opacity .5s linear;
 }
