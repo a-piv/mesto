@@ -8,6 +8,7 @@
     background-color: transparent;
     background-image: url("../../../images/close-form.svg");
     background-size: cover;
+    background-repeat: no-repeat;
     transition: 1s;
 }
 
@@ -16,4 +17,16 @@
 }
 .popup-image__button-close:hover{
     opacity: .5;
+}
+
+
+@media all and (max-width: 450px){
+    .popup-image__button-close{
+        top: -35px;
+        right: 0px;
+        width: 20px;
+        height: 20px;
+        transition: .5s;
+        background-size: 20px;
+    }
 }
