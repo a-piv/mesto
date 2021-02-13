@@ -7,12 +7,12 @@ const content = body.querySelector('.content');
 
 const formCloseProfile = body.querySelector('.form__close-profile');
 const formCloseCard = body.querySelector('.form__close-card');
-const formCloseImage = body.querySelector('.form__close-image');
+const formCloseImage = body.querySelector('.popup-image__close-image');
 
 
-const popupProfile = body.querySelector('.popup__profile');
-const popupCard = body.querySelector('.popup__card');
-const popupImage = body.querySelector('.popup__image');
+const popupProfile = body.querySelector('.popup-profile');
+const popupCard = body.querySelector('.popup-card');
+const popupImage = body.querySelector('.popup-image');
 
 
 // Открыть попап
@@ -49,6 +49,7 @@ function createCard(cardName, cardLink) {
     element.querySelector('.element__name').textContent = cardName;
     element.querySelector('.element__like').addEventListener('click', funcLike);
     element.querySelector('.element__delete').addEventListener('click', delCard)
+    element.querySelector('.element__images').addEventListener('click', fullSkreenImage)
     return element;
 }
 

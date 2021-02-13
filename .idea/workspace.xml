@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__like/element__like.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__like/element__like.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/popup-image/__button-close/popup-image__button-close.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup-image/__button-close/popup-image__button-close.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup-image/__skrin/popup-image__scrin.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup-image/__skrin/popup-image__scrin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup-image/popup-image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup-image/popup-image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/form.js" afterDir="false" />
     </list>
@@ -68,7 +68,7 @@
       <workItem from="1610998386763" duration="76476000" />
       <workItem from="1612295802670" duration="7176000" />
       <workItem from="1612723799873" duration="85095000" />
-      <workItem from="1613195427852" duration="25483000" />
+      <workItem from="1613195427852" duration="29741000" />
     </task>
     <servers />
   </component>
