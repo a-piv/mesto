@@ -24,33 +24,48 @@
         </section>
 
         <section class="elements">
-
         </section>
+
     </main>
 
-<!--    <template id="popup__new-card">-->
-        <section class="popup popup-form">
-            <form class="form" name="edit-profile" action="#" >
-                <button type="button" aria-label="Закрыть форму" class="form__button-close"></button>
-                <h3 class="form__title"></h3>
-                <input class="form__input" type="text" name="firstname" id="form-firstname">
-                <input class="form__input" type="text" name="secondname" id="form-secondname">
+        <section class="popup popup__profile">
+            <form class="form form_profile" name="edit-profile" action="#" >
+                <button type="button" aria-label="Закрыть форму" class="form__close-profile form__button-close"></button>
+                <h3 class="form__title">Редактировать профиль</h3>
+                <input class="form__input" type="text" name="firstname" id="form-firstname-profile">
+                <input class="form__input" type="text" name="secondname" id="form-secondname-prifile">
                 <button class="form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
             </form>
         </section>
-<!--    </template>-->
-
-<!--    <template id="popup__full-scrin-image">-->
-        <div class="popup popup-image">
-            <div class="popup-image__wrapper">
-                <button type="button" aria-label="Закрыть форму" class="popup-image__button-close"></button>
-                <img class="popup-image__scrin" alt="xxx" src="#">
-                <p class="popup-image__signature"></p>
+        <section class="popup popup__card">
+            <form class="form form_card" name="edit-profile" action="#" >
+                <button type="button" aria-label="Закрыть форму" class="form__close-card form__button-close"></button>
+                <h3 class="form__title">Новая тачка</h3>
+                <input class="form__input" type="text" name="firstname" id="form-card-name" placeholder="Название">
+                <input class="form__input" type="text" name="secondname" id="form-card-link" placeholder="Ссылка на картинку">
+                <button class="form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
+            </form>
+        </section>
+        <section class="popup popup__image">
+            <div class="popup-image">
+                <div class="popup-image__wrapper">
+                    <button type="button" aria-label="Закрыть форму" class="form__close-image popup-image__button-close"></button>
+                    <img class="popup-image__scrin" alt="xxx" src="https://images.unsplash.com/photo-1473646910415-5bf513680e98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                    <p class="popup-image__signature">Заливаем масло</p>
+                </div>
             </div>
-        </div>
-<!--    </template>-->
+        </section>
 
-
+    <template id="element-template">
+        <article class="element">
+            <img class="element__images" src="./images/auto/julian-klumpers-uKWUAWG5n5U-unsplash.jpg" alt="Auto">
+            <button class="element__delete" type="button"></button>
+            <div class="element__description">
+                <h2 class="element__name">Вольво</h2>
+                <button class="element__like" type="button"></button>
+            </div>
+        </article>
+    </template>
 
     <footer class="footer"><p class="footer__copyright">&copy; 2020 Mesto Russia</p></footer>
     <script src='scripts/cards.js'></script>
