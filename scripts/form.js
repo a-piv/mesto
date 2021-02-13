@@ -11,17 +11,32 @@ const formCloseImage = body.querySelector('.popup-image__close-image');
 
 
 const popupProfile = body.querySelector('.popup-profile');
+const formProfile = popupProfile.querySelector('.form_profile');
+const firstName = popupProfile.querySelector('#form-firstname-profile');
+const secondName = popupProfile.querySelector('#form-secondname-prifile')
+
+const addButton = body.querySelector('.profile__add-button');
+
 const popupCard = body.querySelector('.popup-card');
+const formCardName = popupCard.querySelector('#form-card-name');
+const formCardLink = popupCard.querySelector('#form-card-link');
+
+const formCard = popupCard.querySelector('.form_card');
+
 const popupImage = body.querySelector('.popup-image');
+const popupImageScrin = popupImage.querySelector('.popup-image__scrin') ;
+const popupImageSignature = popupImage.querySelector('.popup-image__signature');
+const popupImageButtonClose = popupImage.querySelector('.popup-image__button-close');
+
 
 
 // Открыть попап
-function openModal(form) {
-    form.classList.add('form_active');
+function openModal(modal) {
+    modal.classList.add('form_active');
 }
 // Закрыть попап
-function closeModal(form) {
-    form.classList.remove('form_active');
+function closeModal(modal) {
+    modal.classList.remove('form_active');
     // form.
 }
 
@@ -29,15 +44,15 @@ function closeModal(form) {
 // Открыть попап для профиля
 function openProfileModal() {
     openModal(popupProfile);
-    popupProfile.querySelector('#form-firstname-profile').value = profileName.textContent;
-    popupProfile.querySelector('#form-secondname-prifile').value = profileSubtitle.textContent;
+    firstName.value = profileName.textContent;
+    secondName.value = profileSubtitle.textContent;
 }
 
 
 // Открыть попап для новой карточки
 function openFormNewCard() {
     openModal(popupCard);
-    popupCard.querySelector('.form_card').addEventListener('submit', saveNewCard);
+    formCard.addEventListener('submit', saveNewCard);
 }
 
 //Создать карточку.
@@ -57,20 +72,20 @@ function createCard(cardName, cardLink) {
 //Сохранить профиль
 function saveNewProfile(evt) {
     evt.preventDefault();
-    profileName.textContent = popupProfile.querySelector('#form-firstname-profile').value;
-    profileSubtitle.textContent = popupProfile.querySelector('#form-secondname-prifile').value;
+    profileName.textContent = firstName.value;
+    profileSubtitle.textContent = secondName.value;
     closeModal(popupProfile)
 }
 
 //Сохранить карточку
 function saveNewCard(evt) {
     evt.preventDefault();
-    const name = popupCard.querySelector('#form-card-name').value;
-    const link = popupCard.querySelector('#form-card-link').value;
+    const name = formCardName.value;
+    const link = formCardLink.value;
     elements.prepend(createCard(name, link));
     closeModal(popupCard);
-    popupCard.querySelector('#form-card-name').value = '';
-    popupCard.querySelector('#form-card-link').value = '';
+    formCardName.value = '';
+    formCardLink.value = '';
 }
 
 // Удалить карточку
@@ -91,16 +106,15 @@ auto.forEach(item => {
 
 
 // Форма - Добавить новую карточку
-const addButton = body.querySelector('.profile__add-button');
 addButton.addEventListener('click', openFormNewCard)
 
 
 
 function fullSkreenImage(evt) {
     openModal(popupImage);
-    popupImage.querySelector('.popup-image__scrin').setAttribute("src", evt.target.currentSrc)
-    popupImage.querySelector('.popup-image__signature').textContent = evt.target.alt;
-    popupImage.querySelector('.popup-image__button-close').addEventListener('click', deleteFullImage)
+    popupImageScrin.setAttribute("src", evt.target.currentSrc)
+    popupImageSignature.textContent = evt.target.alt;
+    popupImageButtonClose.addEventListener('click', deleteFullImage)
 }
 
 
@@ -110,7 +124,7 @@ function deleteFullImage() {
 
 // Форма - Редактировать профиль
 editForm.addEventListener('click', openProfileModal);
-popupProfile.querySelector('.form_profile').addEventListener('submit', saveNewProfile);
+formProfile.addEventListener('submit', saveNewProfile);
 
 
 
