@@ -40,23 +40,80 @@
 
     </main>
 
-        <section class="popup popup-profile">
+<!--    <form class="form" novalidate>-->
+<!--        <label class="form__field">-->
+<!--            Введите адрес электронной почты-->
+<!--            <input id="email-input" class="form__input" type="email" placeholder="Email" required>-->
+<!--            <span class="email-input-error form__input-error"></span>-->
+<!--        </label>-->
+<!--        <label class="form__field">-->
+<!--            Введите пароль-->
+<!--            <input id="password-input" class="form__input" type="password" placeholder="Password" required minlength="6">-->
+<!--            <span class="password-input-error form__input-error"></span>-->
+<!--        </label>-->
+<!--        <button class="form__submit">Войти</button>-->
+<!--    </form>-->
+
+    <section class="popup popup-profile">
+
+<!--        <form class="form" novalidate="">-->
+<!--            <fieldset class="form__set form__set_active">-->
+<!--                <label class="form__field">-->
+<!--                    <input type="email" class="form__input" id="email-input" required="" minlength="7">-->
+<!--                    <span class="form__placeholder email-input-placeholder">E-mail:</span>-->
+<!--                    <span class="form__input-error email-input-error"></span>-->
+<!--                </label>-->
+<!--                <label class="form__field">-->
+<!--                    <input type="password" class="form__input" id="password-input" required="" minlength="7">-->
+<!--                    <span class="form__placeholder password-input-placeholder">Пароль:</span>-->
+<!--                    <span class="form__input-error password-input-error"></span>-->
+<!--                </label>-->
+<!--                <button type="button" class="form__submit form__button button button_inactive">-->
+<!--                    Далее-->
+<!--                </button>-->
+<!--            </fieldset>-->
+
+<!--        </form>-->
+
             <form class="form form_profile" name="edit-profile" action="#" >
                 <button type="button" aria-label="Закрыть форму" class="form__close-profile form__button-close"></button>
                 <h3 class="form__title">Редактировать профиль</h3>
-                <input class="form__input" type="text" name="firstname" id="form-firstname-profile">
-                <input class="form__input" type="text" name="secondname" id="form-secondname-prifile">
-                <button class="form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
+
+                <fieldset class="form__set form__set_active">
+                    <label class="form__field">
+                        <input class="form__input" type="text" name="firstname" id="form-firstname-profile" minlength="2" maxlength="40" required>
+                        <span class="form__input-error form__input-error_active email-input-error form-firstname-profile-error"></span>
+                    </label>
+                    <label class="form__field">
+                        <input class="form__input" type="text" name="secondname" id="form-secondname-prifile" minlength="2" maxlength="200" required>
+                        <span class="form__input-error form__input-error_active form-secondname-prifile-error"></span>
+                    </label>
+                    <button class="form__submit form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
+                </fieldset>
             </form>
+
+
         </section>
+
         <section class="popup popup-card">
+
             <form class="form form_card" name="edit-profile" action="#" >
                 <button type="button" aria-label="Закрыть форму" class="form__close-card form__button-close"></button>
                 <h3 class="form__title">Новая тачка</h3>
-                <input class="form__input" type="text" name="firstname" id="form-card-name" placeholder="Название">
-                <input class="form__input" type="text" name="secondname" id="form-card-link" placeholder="Ссылка на картинку">
-                <button class="form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
+
+                <fieldset class="form__set form__set_active">
+                    <label class="form__field">
+                        <input class="form__input" type="text" name="firstname" id="form-card-name" placeholder="Название" minlength="2" maxlength="30" required>
+                        <span class="form__input-error email-input-error form-card-name-error"></span>
+                    </label>
+                    <label class="form__field">
+                        <input class="form__input" type="url" name="secondname" id="form-card-link" placeholder="Ссылка на картинку" required>
+                        <span class="form__input-error password-input-error form-card-link-error"></span>
+                    </label>
+                    <button class="form__submit form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
+                </fieldset>
             </form>
+
         </section>
         <section class="popup popup-image">
 <!--            <div class="popup-image">-->
@@ -71,6 +128,7 @@
 
 
     <footer class="footer"><p class="footer__copyright">&copy; 2020 Mesto Russia</p></footer>
+    <script src='scripts/validate.js'></script>
     <script src='scripts/cards.js'></script>
     <script src='scripts/form.js'></script>
 </body>

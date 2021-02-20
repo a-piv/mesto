@@ -46,11 +46,13 @@ function openProfileModal() {
     openModal(popupProfile);
     firstName.value = profileName.textContent;
     secondName.value = profileSubtitle.textContent;
+    toggleButtonState(Array.from(formProfile.querySelectorAll('.form__input')), formProfile.querySelector('.form__submit'));
 }
 
 
 // Открыть попап для новой карточки
 function openFormNewCard() {
+    toggleButtonState(Array.from(formCard.querySelectorAll('.form__input')), formCard.querySelector('.form__submit'));
     openModal(popupCard);
     formCard.addEventListener('submit', saveNewCard);
 }
@@ -132,3 +134,5 @@ formProfile.addEventListener('submit', saveNewProfile);
 formCloseProfile.addEventListener('click', () => closeModal(popupProfile));
 formCloseCard.addEventListener('click', () => closeModal(popupCard));
 formCloseImage.addEventListener('click', () => closeModal(popupImage));
+
+

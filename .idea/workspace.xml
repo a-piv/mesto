@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/blocks/form/__set/_active/form__set_active.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/form/__set/form__set.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/form/__button-save/form__button-save.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__button-save/form__button-save.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/form/__input/form__input.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__input/form__input.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/form/__input/form__input-error.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -46,11 +55,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form\__set" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form\__button\__button-close" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\form\__button\__button-save" />
       <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\scripts" />
-      <recent name="C:\Users\Kotik\YandexDisk\My\YaPraktikum\mesto\blocks\profile\__add-button" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -65,7 +74,8 @@
       <workItem from="1610998386763" duration="76476000" />
       <workItem from="1612295802670" duration="7176000" />
       <workItem from="1612723799873" duration="85095000" />
-      <workItem from="1613195427852" duration="33451000" />
+      <workItem from="1613195427852" duration="53905000" />
+      <workItem from="1613815078831" duration="8026000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,9 @@
     line-height: 22px;
     text-align: center;
     transition: .5s;
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid #C4C4C4;
 }
 
 .form__button-save:hover {
@@ -19,6 +22,13 @@
 
 .form__button-save:focus {
     outline: none;
+}
+
+
+.button_inactive {
+    color: #C4C4C4;
+    background: #ffffff;
+    pointer-events: none;
 }
 
 @media all and (max-width: 665px){

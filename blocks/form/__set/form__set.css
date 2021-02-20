@@ -1,0 +1,26 @@
+.form__set{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+.form__field{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+
+.form__input-error{
+    position: absolute;
+    top: 30px;
+    color: #FF0000;
+    font-size: 12px;
+    line-height: 15px;
+}
+.form__input-error_active{}
+
+
+.email-input-error{}
