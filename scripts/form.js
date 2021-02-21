@@ -37,7 +37,6 @@ function openModal(modal) {
 // Закрыть попап
 function closeModal(modal) {
     modal.classList.remove('form_active');
-    // form.
 }
 
 
@@ -134,5 +133,22 @@ formProfile.addEventListener('submit', saveNewProfile);
 formCloseProfile.addEventListener('click', () => closeModal(popupProfile));
 formCloseCard.addEventListener('click', () => closeModal(popupCard));
 formCloseImage.addEventListener('click', () => closeModal(popupImage));
+
+
+// Закрыть окно по кнопке "Esc"
+body.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+        body.querySelectorAll(".popup").forEach(function (popup) {
+            closeModal(popup);
+        });
+    }
+});
+
+// Закрыть окно при кнопке вне формы
+body.addEventListener('click',(evt)=>{
+    if (evt.target.classList.contains('form_active')) {
+        closeModal((evt.target).closest('.popup'))
+    }
+})
 
 

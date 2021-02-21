@@ -22,7 +22,7 @@
 
 
 .form__input:valid {
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid black;
 }
 
 .form__input:invalid {

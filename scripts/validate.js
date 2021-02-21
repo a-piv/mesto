@@ -3,16 +3,6 @@ const formInput = formElement.querySelector('.form__input');
 const formError = formElement.querySelector(`.${formInput.id}-error`);
 
 
-function pechatError(evt){
-    formInput.addEventListener('input', (evt)=>{
-        formError.textContent = evt.target.validationMessage;
-        console.log(evt.target.validity.valid);
-        console.log(evt.target.validationMessage);
-    })
-}
-pechatError();
-
-
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add('form__input_type_error');
