@@ -24,57 +24,12 @@
         </section>
 
         <section class="elements">
-
-            <template id="element-template">
-                <article class="element">
-                    <img class="element__images" src="./images/auto/julian-klumpers-uKWUAWG5n5U-unsplash.jpg" alt="Auto">
-                    <button class="element__delete" type="button"></button>
-                    <div class="element__description">
-                        <h2 class="element__name">Вольво</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>
-            </template>
-
         </section>
 
     </main>
 
-<!--    <form class="form" novalidate>-->
-<!--        <label class="form__field">-->
-<!--            Введите адрес электронной почты-->
-<!--            <input id="email-input" class="form__input" type="email" placeholder="Email" required>-->
-<!--            <span class="email-input-error form__input-error"></span>-->
-<!--        </label>-->
-<!--        <label class="form__field">-->
-<!--            Введите пароль-->
-<!--            <input id="password-input" class="form__input" type="password" placeholder="Password" required minlength="6">-->
-<!--            <span class="password-input-error form__input-error"></span>-->
-<!--        </label>-->
-<!--        <button class="form__submit">Войти</button>-->
-<!--    </form>-->
 
     <section class="popup popup-profile">
-
-<!--        <form class="form" novalidate="">-->
-<!--            <fieldset class="form__set form__set_active">-->
-<!--                <label class="form__field">-->
-<!--                    <input type="email" class="form__input" id="email-input" required="" minlength="7">-->
-<!--                    <span class="form__placeholder email-input-placeholder">E-mail:</span>-->
-<!--                    <span class="form__input-error email-input-error"></span>-->
-<!--                </label>-->
-<!--                <label class="form__field">-->
-<!--                    <input type="password" class="form__input" id="password-input" required="" minlength="7">-->
-<!--                    <span class="form__placeholder password-input-placeholder">Пароль:</span>-->
-<!--                    <span class="form__input-error password-input-error"></span>-->
-<!--                </label>-->
-<!--                <button type="button" class="form__submit form__button button button_inactive">-->
-<!--                    Далее-->
-<!--                </button>-->
-<!--            </fieldset>-->
-
-<!--        </form>-->
-
             <form class="form form_profile" name="edit-profile" action="#" >
                 <button type="button" aria-label="Закрыть форму" class="form__close-profile form__button-close"></button>
                 <h3 class="form__title">Редактировать профиль</h3>
@@ -91,12 +46,9 @@
                     <button class="form__submit form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
                 </fieldset>
             </form>
-
-
         </section>
 
         <section class="popup popup-card">
-
             <form class="form form_card" name="edit-profile" action="#" >
                 <button type="button" aria-label="Закрыть форму" class="form__close-card form__button-close"></button>
                 <h3 class="form__title">Новая тачка</h3>
@@ -116,18 +68,27 @@
 
         </section>
         <section class="popup popup-image">
-<!--            <div class="popup-image">-->
                 <figure class="popup-image__wrapper">
                     <button type="button" aria-label="Закрыть форму" class="popup-image__close-image popup-image__button-close"></button>
                     <img class="popup-image__scrin" alt="xxx" src="https://images.unsplash.com/photo-1473646910415-5bf513680e98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
                     <p class="popup-image__signature">Заливаем масло</p>
                 </figure>
-<!--            </div>-->
         </section>
 
-
-
     <footer class="footer"><p class="footer__copyright">&copy; 2020 Mesto Russia</p></footer>
+
+    <template id="element-template">
+        <article class="element">
+            <img class="element__images" src="./images/auto/julian-klumpers-uKWUAWG5n5U-unsplash.jpg" alt="Auto">
+            <button class="element__delete" type="button"></button>
+            <div class="element__description">
+                <h2 class="element__name">Вольво</h2>
+                <button class="element__like" type="button"></button>
+            </div>
+        </article>
+    </template>
+
+
     <script src='scripts/validate.js'></script>
     <script src='scripts/cards.js'></script>
     <script src='scripts/form.js'></script>

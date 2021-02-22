@@ -45,18 +45,7 @@ const setEventListeners = (formElement) => {
 };
 
 
-function enableValidation(){
-    const formList = Array.from(document.querySelectorAll('.form'))
-    formList.forEach((formElement)=>{
-        formElement.addEventListener('submit', (evt)=>{
-            evt.preventDefault();
-        })
-        setEventListeners(formElement);
-        // console.log(formList)
-    })
-}
 
-enableValidation ()
 
 
 function hasInvalidInput(inputList){
@@ -76,17 +65,32 @@ function toggleButtonState (inputList, buttonElement){
 
 
 
-
+// const formElement = document.querySelector('.form');
+// const formInput = formElement.querySelector('.form__input');
+// const formError = formElement.querySelector(`.${formInput.id}-error`);
 
 //Сделайте функцию enableValidation ответственной за включение валидации всех форм. Пусть она принимает как объект настроек все нужные функциям классы и селекторы элементов:
 // включение валидации вызовом enableValidation
 // все настройки передаются при вызове
 
     // enableValidation({
-    //     formSelector: '.popup__form',
-    //     inputSelector: '.popup__input',
-    //     submitButtonSelector: '.popup__button',
-    //     inactiveButtonClass: 'popup__button_disabled',
-    //     inputErrorClass: 'popup__input_type_error',
-    //     errorClass: 'popup__error_visible'
+    //     formSelector: 'popup',
+    //     inputSelector: 'form__input',
+    //     submitButtonSelector: 'form__submit',
+    //     inactiveButtonClass: 'button_inactive',
+    //     inputErrorClass: 'form__input-error',
+    //     errorClass: 'form__input-error_active'
     // });
+
+function enableValidation(){
+    const formList = Array.from(document.querySelectorAll('.form'))
+    formList.forEach((formElement)=>{
+        formElement.addEventListener('submit', (evt)=>{
+            evt.preventDefault();
+        })
+        setEventListeners(formElement);
+        // console.log(formList)
+    })
+}
+
+enableValidation ()

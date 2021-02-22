@@ -26,7 +26,7 @@ const initialCards = [
 ];
 
 
-let auto = [
+const auto = [
   {
     name: 'Шевроле',
     link: './images/auto/ali-moharami-8Z57k-SCqIE-unsplash.jpg'

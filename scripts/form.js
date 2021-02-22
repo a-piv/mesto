@@ -28,15 +28,18 @@ const popupImageScrin = popupImage.querySelector('.popup-image__scrin') ;
 const popupImageSignature = popupImage.querySelector('.popup-image__signature');
 const popupImageButtonClose = popupImage.querySelector('.popup-image__button-close');
 
+const ESC_CODE = 'Escape';
 
 
 // Открыть попап
 function openModal(modal) {
     modal.classList.add('form_active');
+    addEventListener('keydown', closeByEsc);
 }
 // Закрыть попап
 function closeModal(modal) {
     modal.classList.remove('form_active');
+    removeEventListener('keydown', closeByEsc)
 }
 
 
@@ -53,19 +56,19 @@ function openProfileModal() {
 function openFormNewCard() {
     toggleButtonState(Array.from(formCard.querySelectorAll('.form__input')), formCard.querySelector('.form__submit'));
     openModal(popupCard);
-    formCard.addEventListener('submit', saveNewCard);
 }
 
 //Создать карточку.
 function createCard(cardName, cardLink) {
     const elementTemplate = body.querySelector('#element-template').content;
     const element = elementTemplate.querySelector('.element').cloneNode(true);
-    element.querySelector('.element__images').setAttribute('src', cardLink);
-    element.querySelector('.element__images').setAttribute('alt', cardName);
+    const elementImages = element.querySelector('.element__images');
+    elementImages.setAttribute('src', cardLink);
+    elementImages.setAttribute('alt', cardName);
     element.querySelector('.element__name').textContent = cardName;
     element.querySelector('.element__like').addEventListener('click', funcLike);
     element.querySelector('.element__delete').addEventListener('click', delCard)
-    element.querySelector('.element__images').addEventListener('click', fullSkreenImage)
+    elementImages.addEventListener('click', fullSkreenImage)
     return element;
 }
 
@@ -136,13 +139,22 @@ formCloseImage.addEventListener('click', () => closeModal(popupImage));
 
 
 // Закрыть окно по кнопке "Esc"
-body.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape") {
-        body.querySelectorAll(".popup").forEach(function (popup) {
-            closeModal(popup);
-        });
+// body.addEventListener("keydown", (evt) => {
+//     if (evt.key === "Escape") {
+//         body.querySelectorAll(".popup").forEach(function (popup) {
+//             closeModal(popup);
+//         });
+//     }
+// });
+
+// Закрыть окно по кнопке "Esc"
+function closeByEsc(evt) {
+    if (evt.key === ESC_CODE) {
+        const openedPopup = document.querySelector('.form_active');
+        closeModal(openedPopup);
     }
-});
+    console.log(evt.key)
+}
 
 // Закрыть окно при кнопке вне формы
 body.addEventListener('click',(evt)=>{
@@ -152,3 +164,4 @@ body.addEventListener('click',(evt)=>{
 })
 
 
+formCard.addEventListener('submit', saveNewCard);

@@ -11,3 +11,8 @@
     right: 10px;
     z-index: 2;
 }
+
+
+.element__images:hover{
+    cursor: pointer;
+}
