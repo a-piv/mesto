@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="381127bc-eb75-408f-85ed-9f1898885ba6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/element/__images/element__images.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__images/element__images.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validate.js" afterDir="false" />
     </list>

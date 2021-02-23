@@ -1,8 +1,4 @@
-const formElement = document.querySelector('.form');
-const formInput = formElement.querySelector('.form__input');
-const formError = formElement.querySelector(`.${formInput.id}-error`);
-
-
+// Показать ошибку в строке вваода
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add('form__input_type_error');
@@ -10,6 +6,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
     errorElement.classList.add('form__input-error_active');
 };
 
+// Скрыть ошибку в строке вваода
 const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove('form__input_type_error');
@@ -17,6 +14,7 @@ const hideInputError = (formElement, inputElement) => {
     errorElement.textContent = '';
 };
 
+// Если поле вадидно скрыть ошибку, иначе показать
 const checkInputValidity = (formElement, inputElement) => {
     if (!inputElement.validity.valid) {
         showInputError(formElement, inputElement, inputElement.validationMessage);
@@ -25,6 +23,7 @@ const checkInputValidity = (formElement, inputElement) => {
     }
 };
 
+// Слушатель событий на поля ввода. Также делает кнопку активной/не активной
 const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll('.form__input'));
     const buttonElement = formElement.querySelector('.form__submit');
@@ -47,7 +46,7 @@ const setEventListeners = (formElement) => {
 
 
 
-
+// Проверка всех полей формы на валидность
 function hasInvalidInput(inputList){
     return inputList.some((inputElement)=>{
         return !inputElement.validity.valid;
@@ -55,6 +54,7 @@ function hasInvalidInput(inputList){
     })
 }
 
+// Включает/отключает кнопку в засисимоси от валидности всех полей
 function toggleButtonState (inputList, buttonElement){
     if (hasInvalidInput(inputList)){
         buttonElement.classList.add('button_inactive');
@@ -62,6 +62,21 @@ function toggleButtonState (inputList, buttonElement){
         buttonElement.classList.remove('button_inactive');
     }
 }
+
+
+
+// Устанавливаем слушать события для каждой формы
+function enableValidation(){
+    const formList = Array.from(document.querySelectorAll('.form'))
+    formList.forEach((formElement)=>{
+        formElement.addEventListener('submit', (evt)=>{
+            evt.preventDefault();
+        })
+        setEventListeners(formElement);
+    })
+}
+
+enableValidation ()
 
 
 
@@ -73,24 +88,11 @@ function toggleButtonState (inputList, buttonElement){
 // включение валидации вызовом enableValidation
 // все настройки передаются при вызове
 
-    // enableValidation({
-    //     formSelector: 'popup',
-    //     inputSelector: 'form__input',
-    //     submitButtonSelector: 'form__submit',
-    //     inactiveButtonClass: 'button_inactive',
-    //     inputErrorClass: 'form__input-error',
-    //     errorClass: 'form__input-error_active'
-    // });
-
-function enableValidation(){
-    const formList = Array.from(document.querySelectorAll('.form'))
-    formList.forEach((formElement)=>{
-        formElement.addEventListener('submit', (evt)=>{
-            evt.preventDefault();
-        })
-        setEventListeners(formElement);
-        // console.log(formList)
-    })
-}
-
-enableValidation ()
+enableValidation({
+    // formSelector: 'popup',
+    // inputSelector: 'form__input',
+    // submitButtonSelector: 'form__submit',
+    // inactiveButtonClass: 'button_inactive',
+    // inputErrorClass: 'form__input-error',
+    // errorClass: 'form__input-error_active'
+});

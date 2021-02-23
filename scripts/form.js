@@ -153,7 +153,6 @@ function closeByEsc(evt) {
         const openedPopup = document.querySelector('.form_active');
         closeModal(openedPopup);
     }
-    console.log(evt.key)
 }
 
 // Закрыть окно при кнопке вне формы
