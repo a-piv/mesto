@@ -11,6 +11,7 @@
     line-height: 17px;
     color: #000000;
     margin: 0 0 5px 0;
+    text-overflow: ellipsis;
 }
 /*.form__input:last-of-type{*/
 /*    margin-bottom: 48px;*/

@@ -23,6 +23,7 @@ const checkInputValidity = (formElement, inputElement) => {
     }
 };
 
+
 // Слушатель событий на поля ввода. Также делает кнопку активной/не активной
 const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll('.form__input'));
@@ -37,12 +38,10 @@ const setEventListeners = (formElement) => {
             checkInputValidity(formElement, inputElement);
             // чтобы проверять его при изменении любого из полей
             toggleButtonState(inputList, buttonElement);
-            console.log()
         });
     });
 
 };
-
 
 
 
@@ -63,36 +62,26 @@ function toggleButtonState (inputList, buttonElement){
     }
 }
 
+const validationForm = {
+    formList:'.form',
+    formInput:'.form__input',
+    formSubmit: '.form__submit',
+    inactiveButtonClass: 'button_inactive',
+    inputErrorClass: 'form__input-error',
+    errorClass: 'form__input-error_active'
+};
 
 
 // Устанавливаем слушать события для каждой формы
-function enableValidation(){
-    const formList = Array.from(document.querySelectorAll('.form'))
+function enableValidation(formObject){
+    const formList = Array.from(document.querySelectorAll(formObject.formList))
+    // const formList = Array.from(document.querySelectorAll('.form'))
     formList.forEach((formElement)=>{
         formElement.addEventListener('submit', (evt)=>{
             evt.preventDefault();
         })
         setEventListeners(formElement);
     })
+console.log(formList)
 }
-
-enableValidation ()
-
-
-
-// const formElement = document.querySelector('.form');
-// const formInput = formElement.querySelector('.form__input');
-// const formError = formElement.querySelector(`.${formInput.id}-error`);
-
-//Сделайте функцию enableValidation ответственной за включение валидации всех форм. Пусть она принимает как объект настроек все нужные функциям классы и селекторы элементов:
-// включение валидации вызовом enableValidation
-// все настройки передаются при вызове
-
-enableValidation({
-    // formSelector: 'popup',
-    // inputSelector: 'form__input',
-    // submitButtonSelector: 'form__submit',
-    // inactiveButtonClass: 'button_inactive',
-    // inputErrorClass: 'form__input-error',
-    // errorClass: 'form__input-error_active'
-});
+enableValidation (validationForm);

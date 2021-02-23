@@ -156,7 +156,7 @@ function closeByEsc(evt) {
 }
 
 // Закрыть окно при кнопке вне формы
-body.addEventListener('click',(evt)=>{
+body.addEventListener('mousedown',(evt)=>{
     if (evt.target.classList.contains('form_active')) {
         closeModal((evt.target).closest('.popup'))
     }
