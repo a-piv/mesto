@@ -48,7 +48,7 @@ function closeModal(modal) {
     const form = modal.querySelector(".form");
     form.querySelectorAll(".form__input").forEach((input) => {
         input.value = "";
-        hideInputError(form, input);
+        hideInputError(form, input, validationForm);
     });
 }
 

@@ -1,34 +1,34 @@
 // Показать ошибку в строке вваода
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, formObject) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add(validationForm.inputErrorClass);
+    inputElement.classList.add(formObject.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(validationForm.errorActive);
+    errorElement.classList.add(formObject.errorActive);
 };
 
 // Скрыть ошибку в строке вваода
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, formObject) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove(validationForm.inputErrorClass);
-    errorElement.classList.remove(validationForm.errorActive);
+    inputElement.classList.remove(formObject.inputErrorClass);
+    errorElement.classList.remove(formObject.errorActive);
     errorElement.textContent = "";
 };
 
 // Если поле вадидно скрыть ошибку, иначе показать
 const checkInputValidity = (formElement, inputElement) => {
     if (!inputElement.validity.valid) {
-        showInputError(formElement, inputElement, inputElement.validationMessage);
+        showInputError(formElement, inputElement, inputElement.validationMessage, validationForm );
     } else {
-        hideInputError(formElement, inputElement);
+        hideInputError(formElement, inputElement, validationForm);
     }
 };
 
 // Слушатель событий на поля ввода. Также делает кнопку активной/не активной
-const setEventListeners = (formElement) => {
+const setEventListeners = (formElement, formObject) => {
     const inputList = Array.from(
-        formElement.querySelectorAll(validationForm.formInput)
+        formElement.querySelectorAll(formObject.formInput)
     );
-    const buttonElement = formElement.querySelector(validationForm.formSubmit);
+    const buttonElement = formElement.querySelector(formObject.formSubmit);
 
     // чтобы проверить состояние кнопки в самом начале
     // toggleButtonState(inputList, buttonElement);
@@ -75,7 +75,7 @@ function enableValidation(formObject) {
         formElement.addEventListener("submit", (evt) => {
             evt.preventDefault();
         });
-        setEventListeners(formElement);
+        setEventListeners(formElement, formObject);
     });
 }
 enableValidation(validationForm);
