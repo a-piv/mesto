@@ -40,14 +40,18 @@ function openModal(modal) {
 }
 // Закрыть попап
 function closeModal(modal) {
-    modal.classList.remove('form_active');
-    removeEventListener('keydown', closeByEsc);
-    removeEventListener('mousedown', closeByOverlay);
-    console.log(modal.querySelectorAll('.form__input'))
-    modal.querySelectorAll('.form__input').forEach((input)=>
-    {input.value=""}
-    )
+    modal.classList.remove("form_active");
+    removeEventListener("keydown", closeByEsc);
+    removeEventListener("mousedown", closeByOverlay);
+
+    //Убираем ошибку и стираем данные заполненного поля
+    const form = modal.querySelector(".form");
+    form.querySelectorAll(".form__input").forEach((input) => {
+        input.value = "";
+        hideInputError(form, input);
+    });
 }
+
 
 
 // Открыть попап для профиля
