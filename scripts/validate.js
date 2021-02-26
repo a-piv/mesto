@@ -1,16 +1,16 @@
 // Показать ошибку в строке вваода
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add('form__input_type_error');
+    inputElement.classList.add(validationForm.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add('form__input-error_active');
+    errorElement.classList.add(validationForm.errorActive);
 };
 
 // Скрыть ошибку в строке вваода
 const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove('form__input_type_error');
-    errorElement.classList.remove('form__input-error_active');
+    inputElement.classList.remove(validationForm.inputErrorClass);
+    errorElement.classList.remove(validationForm.errorActive);
     errorElement.textContent = '';
 };
 
@@ -56,9 +56,9 @@ function hasInvalidInput(inputList){
 // Включает/отключает кнопку в засисимоси от валидности всех полей
 function toggleButtonState (inputList, buttonElement){
     if (hasInvalidInput(inputList)){
-        buttonElement.classList.add('button_inactive');
+        buttonElement.classList.add(validationForm.inactiveButtonClass);
     }else{
-        buttonElement.classList.remove('button_inactive');
+        buttonElement.classList.remove(validationForm.inactiveButtonClass);
     }
 }
 
@@ -67,8 +67,8 @@ const validationForm = {
     formInput:'.form__input',
     formSubmit: '.form__submit',
     inactiveButtonClass: 'button_inactive',
-    inputErrorClass: 'form__input-error',
-    errorClass: 'form__input-error_active'
+    inputErrorClass: 'form__input_type_error',
+    errorActive: 'form__input-error_active'
 };
 
 

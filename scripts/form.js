@@ -35,11 +35,18 @@ const ESC_CODE = 'Escape';
 function openModal(modal) {
     modal.classList.add('form_active');
     addEventListener('keydown', closeByEsc);
+    addEventListener('mousedown', closeByOverlay);
+
 }
 // Закрыть попап
 function closeModal(modal) {
     modal.classList.remove('form_active');
-    removeEventListener('keydown', closeByEsc)
+    removeEventListener('keydown', closeByEsc);
+    removeEventListener('mousedown', closeByOverlay);
+    console.log(modal.querySelectorAll('.form__input'))
+    modal.querySelectorAll('.form__input').forEach((input)=>
+    {input.value=""}
+    )
 }
 
 
@@ -138,14 +145,6 @@ formCloseCard.addEventListener('click', () => closeModal(popupCard));
 formCloseImage.addEventListener('click', () => closeModal(popupImage));
 
 
-// Закрыть окно по кнопке "Esc"
-// body.addEventListener("keydown", (evt) => {
-//     if (evt.key === "Escape") {
-//         body.querySelectorAll(".popup").forEach(function (popup) {
-//             closeModal(popup);
-//         });
-//     }
-// });
 
 // Закрыть окно по кнопке "Esc"
 function closeByEsc(evt) {
@@ -156,11 +155,12 @@ function closeByEsc(evt) {
 }
 
 // Закрыть окно при кнопке вне формы
-body.addEventListener('mousedown',(evt)=>{
+function closeByOverlay(evt) {
     if (evt.target.classList.contains('form_active')) {
         closeModal((evt.target).closest('.popup'))
     }
-})
+}
+
 
 
 formCard.addEventListener('submit', saveNewCard);
