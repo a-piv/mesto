@@ -4,7 +4,6 @@ const profileName = body.querySelector('.profile__title');
 const profileSubtitle = body.querySelector('.profile__subtitle');
 const elements = body.querySelector('.elements');
 const content = body.querySelector('.content');
-const elementTemplate = body.querySelector('#element-template').content;
 
 const formCloseProfile = body.querySelector('.form__close-profile');
 const formCloseCard = body.querySelector('.form__close-card');
@@ -28,8 +27,6 @@ const popupImage = body.querySelector('.popup-image');
 const popupImageScrin = popupImage.querySelector('.popup-image__scrin') ;
 const popupImageSignature = popupImage.querySelector('.popup-image__signature');
 const popupImageButtonClose = popupImage.querySelector('.popup-image__button-close');
-
-
 
 const ESC_CODE = 'Escape';
 
@@ -73,6 +70,21 @@ function openFormNewCard() {
     openModal(popupCard);
 }
 
+//Создать карточку.
+function createCard(cardName, cardLink) {
+    const elementTemplate = body.querySelector('#element-template').content;
+    const element = elementTemplate.querySelector('.element').cloneNode(true);
+    const elementImages = element.querySelector('.element__images');
+    elementImages.setAttribute('src', cardLink);
+    elementImages.setAttribute('alt', cardName);
+    element.querySelector('.element__name').textContent = cardName;
+    element.querySelector('.element__like').addEventListener('click', funcLike);
+    element.querySelector('.element__delete').addEventListener('click', delCard)
+    elementImages.addEventListener('click', fullSkreenImage)
+    return element;
+}
+
+
 //Сохранить профиль
 function saveNewProfile(evt) {
     evt.preventDefault();
@@ -81,61 +93,37 @@ function saveNewProfile(evt) {
     closeModal(popupProfile)
 }
 
-
-// Создаём карточку со всеми методами для карточки
-class Card{
-    constructor(cardName, cardLink, elementTemplate) {
-        console.log("Карочка создана!")
-            this.cardName = cardName,
-            this.cardLink = cardLink,
-            this.elementTemplate = elementTemplate
-    }
-
-    // создать карточку
-    createCard() {
-    const element = this.elementTemplate.querySelector('.element').cloneNode(true);
-    const elementImages = element.querySelector('.element__images');
-    elementImages.setAttribute('src', this.cardLink);
-    elementImages.setAttribute('alt', this.cardName);
-    element.querySelector('.element__name').textContent = this.cardName;
-    element.querySelector('.element__like').addEventListener('click', this._funcLike);
-    element.querySelector('.element__delete').addEventListener('click', this._delCard)
-    elementImages.addEventListener('click', fullSkreenImage)
-    return element;
-    }
-
-    // Удалить карточку
-     _delCard (evt){
-        evt.target.closest('.element').remove();
-    }
-
-    // Лайк карточки
-     _funcLike(evt) {
-        evt.target.classList.toggle('element__like_active');
-    }
-
-}
-
-//Сохранить карточку по клику из формы
-function saveNewCard(evt){
+//Сохранить карточку
+function saveNewCard(evt) {
     evt.preventDefault();
     const name = formCardName.value;
     const link = formCardLink.value;
-    elements.prepend(new Card(name, link, elementTemplate).createCard());
+    elements.prepend(createCard(name, link));
     closeModal(popupCard);
     formCardName.value = '';
     formCardLink.value = '';
 }
 
+// Удалить карточку
+function delCard (evt){
+    evt.target.closest('.element').remove();
+}
+
+// Лайк карточки
+function funcLike(evt) {
+    evt.target.classList.toggle('element__like_active');
+}
+
 
 // Вствляем карточки из массива
 auto.forEach(item => {
-    elements.append(new Card(item.name, item.link, elementTemplate).createCard());
+    elements.append(createCard(item.name, item.link));
 })
 
 
 // Форма - Добавить новую карточку
 addButton.addEventListener('click', openFormNewCard)
+
 
 
 function fullSkreenImage(evt) {
