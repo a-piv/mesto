@@ -1,99 +1,179 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Работа 4 - "Место"</title>
-    <link rel="stylesheet" href="./pages/index.css">
-</head>
-<body class="body">
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="body">
     <header class="header">
-        <img class="logo header__logo" src="./images/logo.svg" alt="Логотип">
-<!--        <div class="header__line"></div>-->
+      <img class="logo header__logo" src="./images/logo.svg" alt="Логотип" />
+      <!--        <div class="header__line"></div>-->
     </header>
     <main class="content">
+      <section class="profile">
+        <img
+          class="profile__avatar"
+          src="./images/mikhail-siskoff-PQPnaO0zsX8-unsplash.jpg"
+          alt="Аватарка"
+        />
+        <div class="profile__info">
+          <h1 class="profile__title">Автомобили</h1>
+          <button
+            type="button"
+            aria-label="Редактировать профиль"
+            class="profile__edit-button"
+          ></button>
+          <p class="profile__subtitle">Исследователь рынок</p>
+        </div>
+        <button
+          type="button"
+          aria-label="Добавить"
+          class="profile__add-button"
+        ></button>
+      </section>
 
-        <section class="profile">
-            <img class="profile__avatar" src="./images/mikhail-siskoff-PQPnaO0zsX8-unsplash.jpg" alt="Аватарка">
-            <div class="profile__info">
-                <h1 class="profile__title">Автомобили</h1>
-                <button type="button" aria-label="Редактировать профиль" class="profile__edit-button"></button>
-                <p class="profile__subtitle">Исследователь рынок</p>
-            </div>
-            <button type="button" aria-label="Добавить" class="profile__add-button"></button>
-        </section>
-
-        <section class="elements">
-        </section>
-
+      <section class="elements"></section>
     </main>
 
-
     <section class="popup popup-profile">
-            <form class="form form_profile" name="edit-profile" action="#" novalidate>
-                <button type="button" aria-label="Закрыть форму" class="form__close-profile form__button-close"></button>
-                <h3 class="form__title">Редактировать профиль</h3>
+      <form class="form form_profile" name="edit-profile" action="#" novalidate>
+        <button
+          type="button"
+          aria-label="Закрыть форму"
+          class="form__close-profile form__button-close"
+        ></button>
+        <h3 class="form__title">Редактировать профиль</h3>
 
-                <fieldset class="form__set form__set_active">
-                    <label class="form__field">
-                        <input class="form__input" type="text" name="firstname" id="form-firstname-profile" minlength="2" maxlength="40" required>
-                        <span class="form__input-error form__input-error_active email-input-error form-firstname-profile-error"></span>
-                    </label>
-                    <label class="form__field">
-                        <input class="form__input" type="text" name="secondname" id="form-secondname-prifile" minlength="2" maxlength="200" required>
-                        <span class="form__input-error form__input-error_active form-secondname-prifile-error"></span>
-                    </label>
-                    <button class="form__submit form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
-                </fieldset>
-            </form>
-        </section>
+        <fieldset class="form__set form__set_active">
+          <label class="form__field">
+            <input
+              class="form__input"
+              type="text"
+              name="firstname"
+              id="form-firstname-profile"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span
+              class="form__input-error form__input-error_active email-input-error form-firstname-profile-error"
+            ></span>
+          </label>
+          <label class="form__field">
+            <input
+              class="form__input"
+              type="text"
+              name="secondname"
+              id="form-secondname-prifile"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span
+              class="form__input-error form__input-error_active form-secondname-prifile-error"
+            ></span>
+          </label>
+          <button
+            class="form__submit form__button-save"
+            type="submit"
+            aria-label="Сохранить данные"
+          >
+            Создеть
+          </button>
+        </fieldset>
+      </form>
+    </section>
 
-        <section class="popup popup-card">
-            <form class="form form_card" name="edit-profile" action="#"  novalidate>
-                <button type="button" aria-label="Закрыть форму" class="form__close-card form__button-close"></button>
-                <h3 class="form__title">Новая тачка</h3>
+    <section class="popup popup-card">
+      <form class="form form_card" name="edit-profile" action="#" novalidate>
+        <button
+          type="button"
+          aria-label="Закрыть форму"
+          class="form__close-card form__button-close"
+        ></button>
+        <h3 class="form__title">Новая тачка</h3>
 
-                <fieldset class="form__set form__set_active">
-                    <label class="form__field">
-                        <input class="form__input" type="text" name="firstname" id="form-card-name" placeholder="Название" minlength="2" maxlength="30" required>
-                        <span class="form__input-error email-input-error form-card-name-error"></span>
-                    </label>
-                    <label class="form__field">
-                        <input class="form__input" type="url" name="secondname" id="form-card-link" placeholder="Ссылка на картинку" required>
-                        <span class="form__input-error password-input-error form-card-link-error"></span>
-                    </label>
-                    <button class="form__submit form__button-save" type="submit" aria-label="Сохранить данные">Создеть</button>
-                </fieldset>
-            </form>
-        </section>
+        <fieldset class="form__set form__set_active">
+          <label class="form__field">
+            <input
+              class="form__input"
+              type="text"
+              name="firstname"
+              id="form-card-name"
+              placeholder="Название"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span
+              class="form__input-error email-input-error form-card-name-error"
+            ></span>
+          </label>
+          <label class="form__field">
+            <input
+              class="form__input"
+              type="url"
+              name="secondname"
+              id="form-card-link"
+              placeholder="Ссылка на картинку"
+              required
+            />
+            <span
+              class="form__input-error password-input-error form-card-link-error"
+            ></span>
+          </label>
+          <button
+            class="form__submit form__button-save"
+            type="submit"
+            aria-label="Сохранить данные"
+          >
+            Создеть
+          </button>
+        </fieldset>
+      </form>
+    </section>
 
+    <section class="popup popup-image">
+      <figure class="popup-image__wrapper">
+        <button
+          type="button"
+          aria-label="Закрыть форму"
+          class="popup-image__close-image popup-image__button-close"
+        ></button>
+        <img
+          class="popup-image__scrin"
+          alt="xxx"
+          src="https://images.unsplash.com/photo-1473646910415-5bf513680e98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+        />
+        <p class="popup-image__signature">Заливаем масло</p>
+      </figure>
+    </section>
 
-
-
-        <section class="popup popup-image">
-                <figure class="popup-image__wrapper">
-                    <button type="button" aria-label="Закрыть форму" class="popup-image__close-image popup-image__button-close"></button>
-                    <img class="popup-image__scrin" alt="xxx" src="https://images.unsplash.com/photo-1473646910415-5bf513680e98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
-                    <p class="popup-image__signature">Заливаем масло</p>
-                </figure>
-        </section>
-
-    <footer class="footer"><p class="footer__copyright">&copy; 2020 Mesto Russia</p></footer>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
 
     <template id="element-template">
-        <article class="element">
-            <img class="element__images" src="./images/auto/julian-klumpers-uKWUAWG5n5U-unsplash.jpg" alt="Auto">
-            <button class="element__delete" type="button"></button>
-            <div class="element__description">
-                <h2 class="element__name">Вольво</h2>
-                <button class="element__like" type="button"></button>
-            </div>
-        </article>
+      <article class="element">
+        <img
+          class="element__images"
+          src="./images/auto/julian-klumpers-uKWUAWG5n5U-unsplash.jpg"
+          alt="Auto"
+        />
+        <button class="element__delete" type="button"></button>
+        <div class="element__description">
+          <h2 class="element__name">Вольво</h2>
+          <button class="element__like" type="button"></button>
+        </div>
+      </article>
     </template>
 
-
-    <script src='scripts/validate.js'></script>
-    <script src='scripts/cards.js'></script>
-    <script src='scripts/form.js'></script>
-</body>
+    <script src="scripts/validate.js"></script>
+    <script src="scripts/cards.js"></script>
+    <script src="scripts/form.js"></script>
+    <script type="module" src="scripts/Card.js"></script>
+    <script type="module" src="scripts/test.js"></script>
+  </body>
 </html>
