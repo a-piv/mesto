@@ -10,7 +10,6 @@ const formCloseProfile = body.querySelector('.form__close-profile');
 const formCloseCard = body.querySelector('.form__close-card');
 const formCloseImage = body.querySelector('.popup-image__close-image');
 
-
 const popupProfile = body.querySelector('.popup-profile');
 const formProfile = popupProfile.querySelector('.form_profile');
 const firstName = popupProfile.querySelector('#form-firstname-profile');
@@ -28,8 +27,6 @@ const popupImage = body.querySelector('.popup-image');
 const popupImageScrin = popupImage.querySelector('.popup-image__scrin') ;
 const popupImageSignature = popupImage.querySelector('.popup-image__signature');
 const popupImageButtonClose = popupImage.querySelector('.popup-image__button-close');
-
-
 
 const ESC_CODE = 'Escape';
 
@@ -52,7 +49,7 @@ function closeModal(modal) {
     const form = modal.querySelector(".form");
     form.querySelectorAll(".form__input").forEach((input) => {
         input.value = "";
-        hideInputError(form, input, validationForm);
+        // hideInputError(form, input, validationForm);
     });
 }
 
@@ -63,14 +60,16 @@ function openProfileModal() {
     openModal(popupProfile);
     firstName.value = profileName.textContent;
     secondName.value = profileSubtitle.textContent;
-    toggleButtonState(Array.from(formProfile.querySelectorAll('.form__input')), formProfile.querySelector('.form__submit'));
+    // new FormValidator._toggleButtonState(Array.from(formProfile.querySelectorAll('.form__input')), formProfile.querySelector('.form__submit'));
+
 }
 
 
 // Открыть попап для новой карточки
 function openFormNewCard() {
-    toggleButtonState(Array.from(formCard.querySelectorAll('.form__input')), formCard.querySelector('.form__submit'));
     openModal(popupCard);
+    // new FormValidator._toggleButtonState(Array.from(formCard.querySelectorAll('.form__input')), formCard.querySelector('.form__submit'));
+
 }
 
 //Сохранить профиль
@@ -85,9 +84,8 @@ function saveNewProfile(evt) {
 // Создаём карточку со всеми методами для карточки
 class Card{
     constructor(cardName, cardLink, elementTemplate) {
-        console.log("Карочка создана!")
-            this.cardName = cardName,
-            this.cardLink = cardLink,
+            this.cardName = cardName;
+            this.cardLink = cardLink;
             this.elementTemplate = elementTemplate
     }
 
@@ -105,7 +103,7 @@ class Card{
     }
 
     // Удалить карточку
-     _delCard (evt){
+     _delCard(evt){
         evt.target.closest('.element').remove();
     }
 
@@ -177,7 +175,5 @@ function closeByOverlay(evt) {
         closeModal((evt.target).closest('.popup'))
     }
 }
-
-
 
 formCard.addEventListener('submit', saveNewCard);
