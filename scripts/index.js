@@ -49,6 +49,7 @@ function openModal(modal) {
   modal.classList.add("form_active");
   addEventListener("keydown", closeByEsc);
   addEventListener("mousedown", closeByOverlay);
+  // console.log(modal.querySelector(".form"));
 }
 
 // Закрыть попап
@@ -72,12 +73,14 @@ function openProfileModal() {
   openModal(popupProfile);
   firstName.value = profileName.textContent;
   secondName.value = profileSubtitle.textContent;
+  new FormValidator(popupProfile.querySelector(".form"), validationForm);
   // new FormValidator._toggleButtonState(Array.from(formProfile.querySelectorAll('.form__input')), formProfile.querySelector('.form__submit'));
 }
 
 // Открыть попап для новой карточки
 function openFormNewCard() {
   openModal(popupCard);
+  new FormValidator(popupCard.querySelector(".form"), validationForm);
   // new FormValidator._toggleButtonState(Array.from(formCard.querySelectorAll('.form__input')), formCard.querySelector('.form__submit'));
 }
 
@@ -145,15 +148,15 @@ function closeByOverlay(evt) {
 
 formCard.addEventListener("submit", saveNewCard);
 
-// Устанавливаем слушать события для каждой формы
-function enableValidation(formObject) {
-  const formList = Array.from(document.querySelectorAll(formObject.formList));
-  // const formList = Array.from(document.querySelectorAll('.form'))
-  formList.forEach((formElement) => {
-    formElement.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-    new FormValidator(formElement, formObject);
-  });
-}
-enableValidation(validationForm);
+// // Устанавливаем слушать события для каждой формы
+// function enableValidation(formObject) {
+//   const formList = Array.from(document.querySelectorAll(formObject.formList));
+//   // const formList = Array.from(document.querySelectorAll('.form'))
+//   formList.forEach((formElement) => {
+//     formElement.addEventListener("submit", (evt) => {
+//       evt.preventDefault();
+//     });
+//     new FormValidator(formElement, formObject);
+//   });
+// }
+// enableValidation(validationForm);

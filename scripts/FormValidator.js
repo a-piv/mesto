@@ -27,6 +27,7 @@ export default class FormValidator {
         this._toggleButtonState($inputList, buttonElement);
       });
     });
+    this._toggleButtonState($inputList, buttonElement);
   }
 
   // Если поле вадидно скрыть ошибку, иначе показать
@@ -45,7 +46,7 @@ export default class FormValidator {
 
   // Включает/отключает кнопку в засисимоси от валидности всех полей
   _toggleButtonState(inputList, buttonElement) {
-    console.log(this._hasInvalidInput(inputList));
+    // console.log(inputList);
     if (this._hasInvalidInput(inputList)) {
       buttonElement.classList.add(this.formObject.inactiveButtonClass);
     } else {
