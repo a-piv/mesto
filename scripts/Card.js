@@ -2,7 +2,7 @@
 // export function meyFunc() {
 //   console.log("Я функция из модуля script-01.js");
 // }
-import { fullSkreenImage } from "./form.js";
+import { fullSkreenImage } from "./index.js";
 
 export default class Card {
   constructor(cardName, cardLink, elementTemplate) {

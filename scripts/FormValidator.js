@@ -1,8 +1,3 @@
-// import { str, myFunc } from "test.js";
-// console.log(str); // "Я переменная из модуля script-01.js"
-// myFunc(); // "Я функция из модуля script-01.js"
-// import { Card } from "./Card.js";
-
 //   Создайте класс FormValidator, который настраивает валидацию полей формы:
 
 //      принимает в конструктор объект настроек с селекторами и классами формы;
@@ -11,27 +6,16 @@
 //      имеет один публичный метод enableValidation, который включает валидацию формы.
 //      Для каждой проверяемой формы создайте экземпляр класса FormValidator.
 
-const validationForm = {
-  formList: ".form",
-  formInput: ".form__input",
-  formSubmit: ".form__submit",
-  inactiveButtonClass: "button_inactive",
-  inputErrorClass: "form__input_type_error",
-  errorActive: "form__input-error_active",
-};
-
-class FormValidator {
+export default class FormValidator {
   constructor(formElement, formObject) {
     this.formElement = formElement;
     this.formObject = formObject;
-    // console.log(formObject.formInput);
     const $inputList = Array.from(
       formElement.querySelectorAll(this.formObject.formInput)
     );
     const buttonElement = this.formElement.querySelector(
       this.formObject.formSubmit
     );
-    this._toggleButtonState($inputList, buttonElement);
 
     // чтобы проверить состояние кнопки в самом начале
     // toggleButtonState(inputList, buttonElement);
@@ -52,22 +36,23 @@ class FormValidator {
         formElement,
         inputElement,
         inputElement.validationMessage,
-        validationForm
+        this.formObject
       );
     } else {
-      this._hideInputError(formElement, inputElement, validationForm);
+      this._hideInputError(formElement, inputElement, this.formObject);
     }
   }
 
   // Включает/отключает кнопку в засисимоси от валидности всех полей
   _toggleButtonState(inputList, buttonElement) {
+    console.log(this._hasInvalidInput(inputList));
     if (this._hasInvalidInput(inputList)) {
-      buttonElement.classList.add(validationForm.inactiveButtonClass);
+      buttonElement.classList.add(this.formObject.inactiveButtonClass);
     } else {
-      buttonElement.classList.remove(validationForm.inactiveButtonClass);
+      buttonElement.classList.remove(this.formObject.inactiveButtonClass);
     }
   }
-
+  //Прверяем чтобы были заполнены все поля
   _hasInvalidInput(inputList) {
     return inputList.some((inputElement) => {
       return !inputElement.validity.valid;
@@ -90,16 +75,3 @@ class FormValidator {
     errorElement.textContent = "";
   }
 }
-
-// Устанавливаем слушать события для каждой формы
-function enableValidation(formObject) {
-  const formList = Array.from(document.querySelectorAll(formObject.formList));
-  // const formList = Array.from(document.querySelectorAll('.form'))
-  formList.forEach((formElement) => {
-    formElement.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-    new FormValidator(formElement, formObject);
-  });
-}
-enableValidation(validationForm);

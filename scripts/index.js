@@ -1,7 +1,14 @@
-// import { str, myFunc } from "test.js";
-// console.log(str);
-// console.log(myFunc());
 import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+
+const validationForm = {
+  formList: ".form",
+  formInput: ".form__input",
+  formSubmit: ".form__submit",
+  inactiveButtonClass: "button_inactive",
+  inputErrorClass: "form__input_type_error",
+  errorActive: "form__input-error_active",
+};
 
 const body = document.querySelector(".body");
 const editForm = body.querySelector(".profile__edit-button");
@@ -137,3 +144,16 @@ function closeByOverlay(evt) {
 }
 
 formCard.addEventListener("submit", saveNewCard);
+
+// Устанавливаем слушать события для каждой формы
+function enableValidation(formObject) {
+  const formList = Array.from(document.querySelectorAll(formObject.formList));
+  // const formList = Array.from(document.querySelectorAll('.form'))
+  formList.forEach((formElement) => {
+    formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+    new FormValidator(formElement, formObject);
+  });
+}
+enableValidation(validationForm);
