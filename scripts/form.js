@@ -1,4 +1,7 @@
-import { Card } from "./Card.js";
+// import { str, myFunc } from "test.js";
+// console.log(str);
+// console.log(myFunc());
+import Card from "./Card.js";
 
 const body = document.querySelector(".body");
 const editForm = body.querySelector(".profile__edit-button");
@@ -96,7 +99,7 @@ auto.forEach((item) => {
 // Форма - Добавить новую карточку
 addButton.addEventListener("click", openFormNewCard);
 
-function fullSkreenImage(evt) {
+export function fullSkreenImage(evt) {
   openModal(popupImage);
   popupImageScrin.setAttribute("src", evt.target.currentSrc);
   popupImageSignature.textContent = evt.target.alt;

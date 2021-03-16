@@ -1,9 +1,10 @@
-// Создаём карточку со всеми методами для карточки
-export function myFunc() {
-  console.log("Я функция из модуля script-01.js");
-}
+// // Создаём карточку со всеми методами для карточки
+// export function meyFunc() {
+//   console.log("Я функция из модуля script-01.js");
+// }
+import { fullSkreenImage } from "./form.js";
 
-export class Card {
+export default class Card {
   constructor(cardName, cardLink, elementTemplate) {
     this.cardName = cardName;
     this.cardLink = cardLink;

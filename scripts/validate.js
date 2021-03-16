@@ -1,9 +1,8 @@
-import { str, myFunc } from "test.js";
+// import { str, myFunc } from "test.js";
+// console.log(str); // "Я переменная из модуля script-01.js"
+// myFunc(); // "Я функция из модуля script-01.js"
+// import { Card } from "./Card.js";
 
-console.log(str); // "Я переменная из модуля script-01.js"
-myFunc(); // "Я функция из модуля script-01.js"
-
-import { Card } from "./Card.js";
 //   Создайте класс FormValidator, который настраивает валидацию полей формы:
 
 //      принимает в конструктор объект настроек с селекторами и классами формы;
