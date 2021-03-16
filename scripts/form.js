@@ -42,20 +42,22 @@ function openModal(modal) {
   modal.classList.add("form_active");
   addEventListener("keydown", closeByEsc);
   addEventListener("mousedown", closeByOverlay);
-  console.log("ddd");
 }
+
 // Закрыть попап
 function closeModal(modal) {
   modal.classList.remove("form_active");
   removeEventListener("keydown", closeByEsc);
   removeEventListener("mousedown", closeByOverlay);
 
-  //Убираем ошибку и стираем данные заполненного поля
-  const form = modal.querySelector(".form");
-  form.querySelectorAll(".form__input").forEach((input) => {
-    input.value = "";
-    // hideInputError(form, input, validationForm);
-  });
+  //Убираем ошибку и стираем данные заполненного поля(только для формы)
+  if (modal.classList.contains("popup-card")) {
+    const form = modal.querySelector(".form");
+    form.querySelectorAll(".form__input").forEach((input) => {
+      input.value = "";
+      // hideInputError(form, input, validationForm);
+    });
+  }
 }
 
 // Открыть попап для профиля
