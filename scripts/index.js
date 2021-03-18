@@ -39,7 +39,7 @@ const popupImage = body.querySelector(".popup-image");
 const popupImageScrin = popupImage.querySelector(".popup-image__scrin");
 const popupImageSignature = popupImage.querySelector(".popup-image__signature");
 const popupImageButtonClose = popupImage.querySelector(
-  ".popup-image__button-close"
+  ".popup-image__close-image"
 );
 
 const ESC_CODE = "Escape";
@@ -49,7 +49,13 @@ function openModal(modal) {
   modal.classList.add("form_active");
   addEventListener("keydown", closeByEsc);
   addEventListener("mousedown", closeByOverlay);
+  eenableValidation(validationForm);
   // console.log(modal.querySelector(".form"));
+
+  //Убираем ошибку и стираем данные заполненного поля(только для формы)
+  if (modal.classList.contains("popup-card")) {
+    modal.querySelector(".form").reset();
+  }
 }
 
 // Закрыть попап
@@ -57,15 +63,6 @@ function closeModal(modal) {
   modal.classList.remove("form_active");
   removeEventListener("keydown", closeByEsc);
   removeEventListener("mousedown", closeByOverlay);
-
-  //Убираем ошибку и стираем данные заполненного поля(только для формы)
-  if (modal.classList.contains("popup-card")) {
-    const form = modal.querySelector(".form");
-    form.querySelectorAll(".form__input").forEach((input) => {
-      input.value = "";
-      // hideInputError(form, input, validationForm);
-    });
-  }
 }
 
 // Открыть попап для профиля
@@ -73,15 +70,23 @@ function openProfileModal() {
   openModal(popupProfile);
   firstName.value = profileName.textContent;
   secondName.value = profileSubtitle.textContent;
-  new FormValidator(popupProfile.querySelector(".form"), validationForm);
+  // new FormValidator(
+  //   popupProfile.querySelector(".form"),
+  //   validationForm
+  // ).enableValidation();
   // new FormValidator._toggleButtonState(Array.from(formProfile.querySelectorAll('.form__input')), formProfile.querySelector('.form__submit'));
+  // new FormValidator.enableValidation();
 }
 
 // Открыть попап для новой карточки
 function openFormNewCard() {
   openModal(popupCard);
-  new FormValidator(popupCard.querySelector(".form"), validationForm);
+  // new FormValidator(
+  //   popupCard.querySelector(".form"),
+  //   validationForm
+  // ).enableValidation();
   // new FormValidator._toggleButtonState(Array.from(formCard.querySelectorAll('.form__input')), formCard.querySelector('.form__submit'));
+  // new FormValidator.enableValidation();
 }
 
 //Сохранить профиль
@@ -159,4 +164,20 @@ formCard.addEventListener("submit", saveNewCard);
 //     new FormValidator(formElement, formObject);
 //   });
 // }
-// enableValidation(validationForm);
+
+// new FormValidator(
+//   popupCard.querySelector(".form"),
+//   validationForm
+// ).enableValidation();
+
+function eenableValidation(formObject) {
+  const formList = Array.from(document.querySelectorAll(formObject.formList));
+  console.log(formList);
+  // const formList = Array.from(document.querySelectorAll('.form'))
+  formList.forEach((formElement) => {
+    formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+    new FormValidator(formElement, formObject).enableValidation();
+  });
+}

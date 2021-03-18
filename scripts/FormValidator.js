@@ -10,24 +10,53 @@ export default class FormValidator {
   constructor(formElement, formObject) {
     this.formElement = formElement;
     this.formObject = formObject;
-    const $inputList = Array.from(
+
+    // const $inputList = Array.from(
+    //   все элементы , которые используются в нескольких разных методах Классов (или поиск которых осуществляется при каждом срабатывании метода),
+    // нужно найти 1 раз и объявить их Классовыми переменными с this..
+    // Чаще всего это удобно сделать в Конструкторе и тогда эти переменные будут доступны по всему коду класса.
+    // Это позволит сэкономить время на повторный поиск элементов, так как они 1 раз были найдены. И не надо будет их больше передавать в вызовы методов.
+    //   Эти элементы обычно this._inputList, this._submitButton, this._form, this._cardImage, this._likeButton
+    // this._inputList = formElement.querySelectorAll(".form__input");
+    //this._submitButton = formElement.querySelector(".form__button-save");
+    // this._form = formElement.querySelector;
+    // this._cardImage =
+    // this._likeButton =
+    // console.log(this._inputList);
+    console.log(formElement);
+
+    this.$inputList = Array.from(
       formElement.querySelectorAll(this.formObject.formInput)
     );
-    const buttonElement = this.formElement.querySelector(
+
+    this._$submitButton = this.formElement.querySelector(
       this.formObject.formSubmit
     );
 
+    this._$form = formElement;
+
+    this.cccs = document.querySelector("#form-card-name");
+    // console.log(formElement);
     // чтобы проверить состояние кнопки в самом начале
     // toggleButtonState(inputList, buttonElement);
+  }
 
-    $inputList.forEach((inputElement) => {
+  enableValidation() {
+    //Удаляем все ошибвки в инпутах
+    this.$inputList.forEach((input) => {
+      this._hideInputError(this._$form, input, this.formObject);
+    });
+    // this._checkInputValidity(this.formElement, inputElement);
+    // this._hideInputError(this._$form, this.cccs, this.formObject);
+
+    this.$inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this._checkInputValidity(formElement, inputElement);
+        this._checkInputValidity(this.formElement, inputElement);
         // чтобы проверять его при изменении любого из полей
-        this._toggleButtonState($inputList, buttonElement);
+        this._toggleButtonState(this.$inputList, this._$submitButton);
       });
     });
-    this._toggleButtonState($inputList, buttonElement);
+    this._toggleButtonState(this.$inputList, this._$submitButton);
   }
 
   // Если поле вадидно скрыть ошибку, иначе показать
@@ -76,3 +105,4 @@ export default class FormValidator {
     errorElement.textContent = "";
   }
 }
+//
