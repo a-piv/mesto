@@ -49,12 +49,7 @@ function openModal(modal) {
   modal.classList.add("form_active");
   addEventListener("keydown", closeByEsc);
   addEventListener("mousedown", closeByOverlay);
-  enableValidationForms(validationForm);
-
-  //Убираем ошибку и стираем данные заполненного поля(только для формы)
-  if (modal.classList.contains("popup-card")) {
-    modal.querySelector(".form").reset();
-  }
+  // enableValidationForms(validationForm);
 }
 
 // Закрыть попап
@@ -74,6 +69,7 @@ function openProfileModal() {
 // Открыть попап для новой карточки
 function openFormNewCard() {
   openModal(popupCard);
+  popupCard.querySelector(".form").reset();
 }
 
 //Сохранить профиль
@@ -107,21 +103,11 @@ export function fullSkreenImage(evt) {
   openModal(popupImage);
   popupImageScrin.setAttribute("src", evt.target.currentSrc);
   popupImageSignature.textContent = evt.target.alt;
-  popupImageButtonClose.addEventListener("click", deleteFullImage);
-}
-
-function deleteFullImage() {
-  popupImage.classList.toggle("popup-image-active");
 }
 
 // Форма - Редактировать профиль
 editForm.addEventListener("click", openProfileModal);
 formProfile.addEventListener("submit", saveNewProfile);
-
-// Форма - закрыть окно
-formCloseProfile.addEventListener("click", () => closeModal(popupProfile));
-formCloseCard.addEventListener("click", () => closeModal(popupCard));
-formCloseImage.addEventListener("click", () => closeModal(popupImage));
 
 // Закрыть окно по кнопке "Esc"
 function closeByEsc(evt) {
@@ -133,7 +119,10 @@ function closeByEsc(evt) {
 
 // Закрыть окно при кнопке вне формы
 function closeByOverlay(evt) {
-  if (evt.target.classList.contains("popup__close")) {
+  if (
+    evt.target.classList.contains("popup__close") ||
+    evt.target.classList.contains("popup")
+  ) {
     closeModal(evt.target.closest(".popup"));
   }
 }
@@ -151,3 +140,5 @@ function enableValidationForms(formObject) {
     new FormValidator(formElement, formObject).enableValidation();
   });
 }
+
+enableValidationForms(validationForm);
