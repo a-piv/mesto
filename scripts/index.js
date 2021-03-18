@@ -49,8 +49,7 @@ function openModal(modal) {
   modal.classList.add("form_active");
   addEventListener("keydown", closeByEsc);
   addEventListener("mousedown", closeByOverlay);
-  eenableValidation(validationForm);
-  // console.log(modal.querySelector(".form"));
+  enableValidationForms(validationForm);
 
   //Убираем ошибку и стираем данные заполненного поля(только для формы)
   if (modal.classList.contains("popup-card")) {
@@ -70,23 +69,11 @@ function openProfileModal() {
   openModal(popupProfile);
   firstName.value = profileName.textContent;
   secondName.value = profileSubtitle.textContent;
-  // new FormValidator(
-  //   popupProfile.querySelector(".form"),
-  //   validationForm
-  // ).enableValidation();
-  // new FormValidator._toggleButtonState(Array.from(formProfile.querySelectorAll('.form__input')), formProfile.querySelector('.form__submit'));
-  // new FormValidator.enableValidation();
 }
 
 // Открыть попап для новой карточки
 function openFormNewCard() {
   openModal(popupCard);
-  // new FormValidator(
-  //   popupCard.querySelector(".form"),
-  //   validationForm
-  // ).enableValidation();
-  // new FormValidator._toggleButtonState(Array.from(formCard.querySelectorAll('.form__input')), formCard.querySelector('.form__submit'));
-  // new FormValidator.enableValidation();
 }
 
 //Сохранить профиль
@@ -146,7 +133,7 @@ function closeByEsc(evt) {
 
 // Закрыть окно при кнопке вне формы
 function closeByOverlay(evt) {
-  if (evt.target.classList.contains("form_active")) {
+  if (evt.target.classList.contains("popup__close")) {
     closeModal(evt.target.closest(".popup"));
   }
 }
@@ -154,25 +141,8 @@ function closeByOverlay(evt) {
 formCard.addEventListener("submit", saveNewCard);
 
 // // Устанавливаем слушать события для каждой формы
-// function enableValidation(formObject) {
-//   const formList = Array.from(document.querySelectorAll(formObject.formList));
-//   // const formList = Array.from(document.querySelectorAll('.form'))
-//   formList.forEach((formElement) => {
-//     formElement.addEventListener("submit", (evt) => {
-//       evt.preventDefault();
-//     });
-//     new FormValidator(formElement, formObject);
-//   });
-// }
-
-// new FormValidator(
-//   popupCard.querySelector(".form"),
-//   validationForm
-// ).enableValidation();
-
-function eenableValidation(formObject) {
+function enableValidationForms(formObject) {
   const formList = Array.from(document.querySelectorAll(formObject.formList));
-  console.log(formList);
   // const formList = Array.from(document.querySelectorAll('.form'))
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
