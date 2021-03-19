@@ -11,6 +11,7 @@
     line-height: 17px;
     color: #000000;
     margin: 0 0 5px 0;
+    border-bottom: 1px solid black;
     text-overflow: ellipsis;
 }
 /*.form__input:last-of-type{*/
@@ -26,9 +27,9 @@
     border-bottom: 1px solid black;
 }
 
-.form__input:invalid {
+/* .form__input:invalid {
     border-bottom: 1px solid red;
-}
+} */
 
 @media all and (max-width: 450px){
     .form__input{

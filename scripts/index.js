@@ -7,7 +7,7 @@ const validationForm = {
   formSubmit: ".form__submit",
   inactiveButtonClass: "button_inactive",
   inputErrorClass: "form__input_type_error",
-  errorActive: "form__input-error_active",
+  // errorActive: "form__input-error_active",
 };
 
 const body = document.querySelector(".body");
@@ -50,6 +50,12 @@ function openModal(modal) {
   addEventListener("keydown", closeByEsc);
   addEventListener("mousedown", closeByOverlay);
   // enableValidationForms(validationForm);
+  modal.querySelectorAll(".form__input-error").forEach((input) => {
+    input.textContent = "";
+  });
+  modal.querySelectorAll(".form__input_type_error").forEach((inp) => {
+    inp.classList.remove("form__input_type_error");
+  });
 }
 
 // Закрыть попап
@@ -132,7 +138,6 @@ formCard.addEventListener("submit", saveNewCard);
 // // Устанавливаем слушать события для каждой формы
 function enableValidationForms(formObject) {
   const formList = Array.from(document.querySelectorAll(formObject.formList));
-  // const formList = Array.from(document.querySelectorAll('.form'))
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();

@@ -75,14 +75,14 @@ export default class FormValidator {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(formObject.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(formObject.errorActive);
+    //errorElement.classList.add(formObject.errorActive);
   }
 
   // Скрыть ошибку в строке вваода
   _hideInputError(formElement, inputElement, formObject) {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(formObject.inputErrorClass);
-    errorElement.classList.remove(formObject.errorActive);
+    //errorElement.classList.remove(formObject.errorActive);
     errorElement.textContent = "";
   }
 }
