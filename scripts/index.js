@@ -50,12 +50,6 @@ function openModal(modal) {
   addEventListener("keydown", closeByEsc);
   addEventListener("mousedown", closeByOverlay);
   // enableValidationForms(validationForm);
-  modal.querySelectorAll(".form__input-error").forEach((input) => {
-    input.textContent = "";
-  });
-  modal.querySelectorAll(".form__input_type_error").forEach((inp) => {
-    inp.classList.remove("form__input_type_error");
-  });
 }
 
 // Закрыть попап
@@ -70,12 +64,25 @@ function openProfileModal() {
   openModal(popupProfile);
   firstName.value = profileName.textContent;
   secondName.value = profileSubtitle.textContent;
+  popupProfile.querySelectorAll(".form__input-error").forEach((input) => {
+    input.textContent = "";
+  });
+  popupProfile.querySelectorAll(".form__input_type_error").forEach((inp) => {
+    inp.classList.remove("form__input_type_error");
+  });
 }
 
 // Открыть попап для новой карточки
 function openFormNewCard() {
   openModal(popupCard);
   popupCard.querySelector(".form").reset();
+
+  popupCard.querySelectorAll(".form__input-error").forEach((input) => {
+    input.textContent = "";
+  });
+  popupCard.querySelectorAll(".form__input_type_error").forEach((inp) => {
+    inp.classList.remove("form__input_type_error");
+  });
 }
 
 //Сохранить профиль
